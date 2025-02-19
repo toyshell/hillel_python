@@ -1,49 +1,39 @@
+# Завдання  4.1    4.2     4.3
 
-# Виконання 3 -х задач 3,1   3,2  3,3
-# HW 3.1
+# HW Завдання 4.1
+lst = [0, 1, 0, 12, 3]
+new_lst = []
 
-x = int(input("введіть число перщої змінної "))
-y = int(input("введіть число другої змінної "))
-operators = input("виберіть оператора +.-,/,* ")
+for num in lst:
+    if num != 0:
+        new_lst.append(num)
 
-if operators == "+":
-    print(x+y)
-elif operators == "-":
-    print(x-y)
-elif operators == "*":
-    print(x*y)
-elif operators == "/":
-  if y == 0:
-    print("ви ввели 0, введіть не 0 ")
-  else:
-    print(x / y)
-else:
+for i in range(lst.count(0)):
+    new_lst.append(0)
 
-    print("невірне число")
+print(new_lst)
 
+# HW Завдання 4.2
 
+lst = [0, 1, 7, 2, 4, 8]
+num_index = 0
 
+for i in range(0,len(lst),2):
+    num_index += lst[i]
 
-# HW 3.2
+result = num_index * lst[-1]
 
-lst = [1]
-
-if len(lst) > 0:
-    last_number = lst.pop()
-    lst.insert(0,last_number)
-print(lst)
+print(result)
 
 
- # HW 3.3
+# HW Завдання 4.3
 
-lst = [1]
 
-if len(lst) == 0:
-    print([[], []])
-elif len(lst) % 2 == 0:
-    number = len(lst) // 2
-    print([lst[:number], lst[number:]])
-else:
-    number = len(lst) // 2 + 1
-    print([lst[:number], lst[number:]])
+import random
+lst = [1, 2, 3, 4, 5, 6, 7, 9]
 
+new_random_lst = [random.randint(0, 10) for i in range(len(lst))]
+
+new_lst = [lst[0],lst[2],lst[-2]]
+
+print(new_lst)
