@@ -71,14 +71,10 @@ import  string
 
 text = input("Введіть текст: ")
 
-# Видаляємо всі символи пунктуації через replace
 for el in string.punctuation:
     text = text.replace(el, "")
 
-# Розбиваємо текст на слова, робимо першу літеру великою та об'єднуємо
 hashtag = "#" + "".join(word.capitalize() for word in text.split()) [:140]
-
-
 
 print(hashtag)
 
