@@ -1,3 +1,77 @@
+#HW Завдання                  6.1         6.2          6.3
+
+# Завдання 6,1
+
+import string
+
+lst = string.ascii_letters
+
+user_letters = input("Введіть дві літери через дефіс: ")
+
+start, end = user_letters.split("-")
+
+start_index = lst.index(start)
+end_index = lst.index(end)
+
+result = lst[start_index : end_index + 1]
+print(result)
+
+from math import remainder
+
+# Завдання 6,2
+
+seconds = int(input("введіть секунди від 0 до 8640000 - "))
+
+if 0 <= seconds < 8640000:
+    days = seconds // 86400
+    hours = (seconds % 86400)// 3600
+    minutes = (seconds % 3600) // 60
+    _seconds = seconds % 60
+
+    time_sec = f"{hours:02}:{minutes:02}:{_seconds:02}"
+    day_sec = "день" if days == 1 else "дні"
+
+    print(f"{days} {day_sec}, {time_sec}")
+else:
+    print("Введіть секунди від 0 до 8640000 правельно ")
+
+
+
+# Завдання 6.3
+
+numbers = int(input("Ведіть число: "))
+
+while numbers >= 9:
+ digit = list(str(numbers))
+ new_digit =[int(el) for el in digit]
+
+ new_number = 1
+
+ for el in new_digit:
+     new_number *= el
+
+ numbers = new_number
+print(numbers)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 # Завдання              5.1               5.2               5.3
 
 # HW Завдання 5.1
@@ -79,20 +153,6 @@ hashtag = "#" + "".join(word.capitalize() for word in text.split()) [:140]
 print(hashtag)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
 
 # Завдання  4.1    4.2     4.3
 
