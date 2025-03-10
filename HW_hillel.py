@@ -1,3 +1,72 @@
+# Завдання                   7.1          7.2          7.3         7.4
+
+# Завдання  7.1
+
+def say_hi(name, age):
+    return f"Hi. My name is {name} and I'm {age} years old"
+
+assert say_hi("Alex", 32) == "Hi. My name is Alex and I'm 32 years old", 'Test1'
+assert say_hi("Frank", 68) == "Hi. My name is Frank and I'm 68 years old", 'Test2'
+print('ОК')
+
+
+# Заавдання 7.2
+
+def correct_sentence(text):
+    if not text:
+        return ""
+
+    text = text[0].upper() + text[1:]
+
+    if not text.endswith("."):
+        text += "."
+
+    return text
+
+assert correct_sentence("greetings, friends") == "Greetings, friends.", 'Test1'
+assert correct_sentence("hello") == "Hello.", 'Test2'
+assert correct_sentence("Greetings. Friends") == "Greetings. Friends.", 'Test3'
+assert correct_sentence("Greetings, friends.") == "Greetings, friends.", 'Test4'
+assert correct_sentence("greetings, friends.") == "Greetings, friends.", 'Test5'
+print('ОК')
+
+
+# Завдання 7.3
+
+def second_index(text, some_str):
+
+    first_text = text.find(some_str)
+    if first_text == -1:
+        return None
+
+    second_index = text.find(some_str, first_text + 1)
+
+    if second_index == -1:
+        return None
+
+    return second_index
+
+assert second_index("sims", "s") == 3, 'Test1'
+assert second_index("find the river", "e") == 12, 'Test2'
+assert second_index("hi", "h") is None, 'Test3'
+assert second_index("Hello, hello", "lo") == 10, 'Test4'
+print('ОК')
+
+
+# Завдання 7.4
+
+def common_elements():
+    multiples_of_3 = set(range(0, 100, 3))
+    multiples_of_5 = set(range(0, 100, 5))
+
+    return multiples_of_3.intersection(multiples_of_5)  # Перетин множин
+
+assert common_elements() == {0, 75, 45, 15, 90, 60, 30}
+print("ОК")
+
+
+
+"""
 #HW Завдання                  6.1         6.2          6.3
 
 # Завдання 6,1
@@ -15,6 +84,7 @@ end_index = lst.index(end)
 
 result = lst[start_index : end_index + 1]
 print(result)
+
 
 from math import remainder
 
@@ -71,7 +141,7 @@ print(numbers)
 
 
 
-"""
+
 # Завдання              5.1               5.2               5.3
 
 # HW Завдання 5.1
