@@ -1,4 +1,33 @@
+# Завдання        9.1            9.2
 
+# Завдання 9.1
+
+def popular_words (text, words):
+    new_text = text.lower()
+    new_text = "".join(char if char.isalpha() or char == " " else "" for char in new_text)
+    new_list = new_text.split()
+    return {word:new_list.count(word) for word in words}
+
+assert popular_words('''When I was One I had just begun When I was Two I was nearly new ''', ['i', 'was', 'three', 'near']) == { 'i': 4, 'was': 3, 'three': 0, 'near': 0 }, 'Test1'
+
+print('OK')
+
+# Завдання 9.2
+
+def difference(*args):
+    if not args:
+        return 0
+    return round(max(args) - min(args),2)
+
+
+assert difference(1, 2, 3) == 2, 'Test1'
+assert difference(5, -5) == 10, 'Test2'
+assert difference(10.2, -2.2, 0, 1.1, 0.5) == 12.4, 'Test3'
+assert difference() == 0, 'Test4'
+print('OK')
+
+
+"""
 # Завдання              8.1      8.2      8.3
 
 # Завдання 8.1
@@ -48,8 +77,6 @@ assert find_unique_value([5, 5, 5, 2, 2, 0.5]) == 0.5, 'Test3'
 print("ОК")
 
 
-
-"""
 # Завдання                   7.1          7.2          7.3         7.4
 
 # Завдання  7.1
