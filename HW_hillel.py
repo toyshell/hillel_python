@@ -1,3 +1,59 @@
+# Завдання         11.1            11.2               11.3
+
+# Завдання 11.1
+
+import math
+
+def prime_generator(end):
+    for num in range(2, end):
+        if all(num % i != 0 for i in range(2,int(math.sqrt(num))+1)):
+            yield num
+
+from inspect import isgenerator
+
+gen = prime_generator(1)
+assert isgenerator(gen) == True, 'Test0'
+assert list(prime_generator(10)) == [2, 3, 5, 7], 'Test1'
+assert list(prime_generator(15)) == [2, 3, 5, 7, 11, 13], 'Test2'
+assert list(prime_generator(30)) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29], 'Test3'
+
+print('Ok')
+
+# Завдання 11.2
+
+def generate_cube_numbers(end):
+    for el in range(2, end + 1):
+        if el ** 3 <= end:
+            yield el ** 3
+
+
+from inspect import isgenerator
+
+gen = generate_cube_numbers(1)
+assert isgenerator(gen) == True, 'Test0'
+assert list(generate_cube_numbers(10)) == [8], 'оскільки воно менше 10.'
+assert list(generate_cube_numbers(100)) == [8, 27, 64], '5 у кубі це 125, а воно вже більше 100'
+assert list(generate_cube_numbers(1000)) == [8, 27, 64, 125, 216, 343, 512, 729, 1000], '10 у кубі це 1000'
+
+print("OK")
+
+# Завдання  10.3
+
+def is_even(number):
+    if (number & 1) == 0:
+        return True
+    else:
+        return False
+
+assert is_even(2494563894038**2) == True, 'Test1'
+assert is_even(1056897**2) == False, 'Test2'
+assert is_even(24945638940387**3) == False, 'Test3'
+
+print("Ok")
+
+
+
+"""
 #Завдання  10,1             10,2             10,3
 
 #Завдання 10.1
@@ -6,11 +62,7 @@ def pow(x):
     return x ** 2
 
 def some_gen(begin, end, func):
-    """
-     begin: перший елемент послідовності
-     end: кількість елементів у послідовності
-     func: функція, яка формує значення для послідовності
-    """
+
     value = begin
     for el in range(end):
         yield  value
@@ -59,7 +111,7 @@ print('OK')
 
 
 
-"""
+
 
 # Завдання        9.1            9.2
 
