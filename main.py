@@ -1,3 +1,37 @@
+# Завдання 14.1
+
+from HW_hillel import Student, Group, GroupOverflowError
+
+
+st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
+st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+gr = Group('PD1')
+gr.add_student(st1)
+gr.add_student(st2)
+print(gr)
+assert gr.find_student('Jobs') == st1  # 'Steve Jobs'
+assert gr.find_student('Jobs2') is None
+print('OK')
+
+try:
+    for i in range(11):
+        gr.add_student(st1)
+except GroupOverflowError as e:
+    print(e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 # Завдання 14.2
 
 from HW_hillel import Student, Group
@@ -20,10 +54,6 @@ gr.delete_student('Taylor')
 
 
 
-
-
-
-"""
 first_list = [[1, 2, 3], [4, 5, 6]]
 for lst in first_list:
     #for j in lst:
