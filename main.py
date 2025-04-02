@@ -1,3 +1,6 @@
+
+
+"""
 # Завдання 14.1
 
 from HW_hillel import Student, Group, GroupOverflowError
@@ -18,7 +21,7 @@ try:
         gr.add_student(st1)
 except GroupOverflowError as e:
     print(e)
-
+"""
 
 
 
